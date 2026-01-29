@@ -9,7 +9,9 @@ public class MainLibro {
 
 	// Creo menu para poder interactuar
 	static void menu() {
+		System.out.println("*************");
 		System.out.println("Perfecto, biblioteca creada!!");
+		System.out.println("*************");
 
 		int op = 0;
 		do {
