@@ -1,3 +1,5 @@
+package taller;
+
 public class Rueda {
     private int pulgadas;
     private double presion;
@@ -16,6 +18,6 @@ public class Rueda {
     }
 
     public String mostrarInfo(){
-        return "Rueda " + this.pulgadas + "\" - Presión: " + this.presion ;
+        return "taller.Rueda " + this.pulgadas + "\" - Presión: " + this.presion ;
     }
 }

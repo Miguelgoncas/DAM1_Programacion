@@ -1,3 +1,5 @@
+package taller;
+
 public class Motor {
     // Declaramos atributos
 
@@ -14,7 +16,7 @@ public class Motor {
 
 
     public String mostrarInfo(){
-        return "Motor: " + this.cilindrada + "cc - " + this.caballos + "CV - Encendido: " + (isEncendido() ? "Sí" : "No");
+        return "taller.Motor: " + this.cilindrada + "cc - " + this.caballos + "CV - Encendido: " + (isEncendido() ? "Sí" : "No");
     }
 
 

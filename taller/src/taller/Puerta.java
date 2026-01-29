@@ -1,3 +1,5 @@
+package taller;
+
 public class Puerta {
     private String posicion;
     private boolean abierta;

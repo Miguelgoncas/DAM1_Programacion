@@ -1,3 +1,5 @@
+package taller;
+
 public class Coche {
     private int contRueda = 0;
     private int contPuerta = 0;
