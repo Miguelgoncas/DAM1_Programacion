@@ -10,11 +10,19 @@ public class HistorialMedico {
         this.medicamentos = medicamentos;
         this.registros = registros;
     }
+    public void MaxhistorialMedico(int maxMedicamentos, int maxRegistros) {
+        this.medicamentos = new Medicamento[maxMedicamentos];
+        this.registros = new RegistroMedico[maxRegistros];
+    }
+
+    public HistorialMedico() {
+
+    }
 
     // Metodo para añadir un medicamento al historial
     public boolean añadirMedicamento(Medicamento medicamento) {
         // Verifico que haya espacio en el array
-        if (contadorMedicamentos < medicamentos.length) {
+        if (contadorMedicamentos < medicamentos.length ) {
             medicamentos[contadorMedicamentos] = medicamento;
             // Incremento el contador de medicamentos para no sobrescribir el siguiente
             contadorMedicamentos++;
@@ -38,12 +46,14 @@ public class HistorialMedico {
     public String mostrarHistorial(){
         // Creo un String vacio para almacenar el String que devuelve el metodo de medicamentos
         String infoMed = "";
-        for(Medicamento medicamento: this.medicamentos){
+        for(Medicamento medicamento: this.medicamentos ) {
+            if( medicamento != null)
             infoMed += medicamento.mostrarInfo();
         }
         // Creo un String vacio para almacenar el String que devuelve el metodo de registros
         String infoReg = "";
         for(RegistroMedico registro: this.registros){
+            if( registro != null)
             infoReg += registro.mostrarRegistro();
     }
         // Devuelvo las variables que he creado para que almacenes la información concatenadas entre ellas

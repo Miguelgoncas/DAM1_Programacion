@@ -10,15 +10,38 @@ public class MainHospital {
         RegistroMedico r2 = new RegistroMedico("20/01/2026", "Dolor de cabeza", "Doctora Alma");
         RegistroMedico r3 = new RegistroMedico("21/01/2026", "Inflamación de muñeca", "Doctor Gabriel");
 
-        // Creo historiales
-        HistorialMedico historial1 = new HistorialMedico(new Medicamento[] { m2 }, new RegistroMedico[] { r1 });
-        HistorialMedico historial2 = new HistorialMedico(new Medicamento[] { m3 }, new RegistroMedico[] { r2 });
-        HistorialMedico historial3 = new HistorialMedico(new Medicamento[] { m2 }, new RegistroMedico[] { r3 });
+        // Creo  historiales vacíos y les añados medicamentos y registros
+        HistorialMedico h1 = new HistorialMedico();
+        h1.MaxhistorialMedico(5,5);
+        if(h1.añadirMedicamento(m1))
+            System.out.println("Medicamento añadido correctamente");
+        if(h1.añadirMedicamento(m2))
+            System.out.println("Medicamento añadido correctamente");
+        if(h1.añadirRegistroMedico(r1))
+            System.out.println("Registro añadido correctamente");
+
+        HistorialMedico h2 = new HistorialMedico();
+        h2.MaxhistorialMedico(5,5);
+        if(h2.añadirMedicamento(m3))
+            System.out.println("Medicamento añadido correctamente");
+        if(h2.añadirRegistroMedico(r2))
+            System.out.println("Registro añadido correctamente");
+
+        HistorialMedico h3 = new HistorialMedico();
+        h3.MaxhistorialMedico(5,5);
+        if(h3.añadirMedicamento(m2))
+            System.out.println("Medicamento añadido correctamente");
+        if(h3.añadirMedicamento(m1))
+            System.out.println("Medicamento añadido correctamente");
+        if(h3.añadirRegistroMedico(r3))
+            System.out.println("Registro añadido correctamente");
+
+
 
         // Creo pacientes
-        Paciente p1 = new Paciente("Miguel", "12348538A", 25, historial1);
-        Paciente p2 = new Paciente("Ana", "12470638A", 17, historial2);
-        Paciente p3 = new Paciente("Luis", "11469525C", 30, historial3);
+        Paciente p1 = new Paciente("Miguel", "12348538A", 25, h1);
+        Paciente p2 = new Paciente("Ana", "12470638A", 17, h2);
+        Paciente p3 = new Paciente("Luis", "11469525C", 30, h3);
 
         // Muestro la ficha de cada cliente
         System.out.println(p1.mostrarFicha());
