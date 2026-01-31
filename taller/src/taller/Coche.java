@@ -29,9 +29,34 @@ public class Coche {
         return true;
     }
 
-    public void arrancar(){
+    public boolean crearPuerta(String posicion){
+        if (estaLlenoPuerta() ){
+            return false;
+        }
+        puertas[contPuerta] = new Puerta(posicion);
+        contPuerta++;
+        return true;
+    }
+
+    public boolean todasPuertasCerradas(){
+        for (Puerta puerta : this.puertas) {
+            if(puerta.isAbierta()){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean arrancar(){
+        if(!todasPuertasCerradas() ){
+            System.out.println("No se puede arrancar con las puertas abiertas");
+
+            return false;
+        }
 
         this.motor.encenderMotor();
+        System.out.println("El coche ha arrancado");
+        return true;
     }
 
     public void apagar(){
