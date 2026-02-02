@@ -15,8 +15,8 @@ public class Paciente {
 
     // Metodo para mostrar la información del paciente
     public String mostrarFicha() {
-        return "Nombre: " + nombre + "\n DNI: " + dni + "\n Edad: " + edad + "\n" +
-               "Historial Médico:\n" + historial.mostrarHistorial();
+        return "Nombre: " + nombre + "\n DNI: " + dni + "\n Edad: " + edad + "\n \n" +
+               "Medicación:\n" + historial.mostrarHistorial();
     }
 
     // Metodo para comprobar si el paciente es mayor de edad
@@ -24,4 +24,6 @@ public class Paciente {
         // Devuelvo directamente true o false según la condición
         return edad >= 18;
     }
+
+
 }

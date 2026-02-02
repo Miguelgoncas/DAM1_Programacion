@@ -12,6 +12,6 @@ public class Medicamento {
     }
     // Metodo para mostrar la información del medicamento
     public String mostrarInfo() {
-        return "Medicamento: " + nombre + "\n Dosis: " + dosisMG + "mg  \n Duración: " + diasTratamiento + " días \n";
+        return "Medicamento: \n" + nombre + "\n Dosis: " + dosisMG + "mg  \n Duración: " + diasTratamiento + " días \n";
     }
 }

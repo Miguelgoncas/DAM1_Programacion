@@ -10,6 +10,7 @@ public class HistorialMedico {
         this.medicamentos = medicamentos;
         this.registros = registros;
     }
+    // Metodo para darle dimensión a los arrays
     public void MaxhistorialMedico(int maxMedicamentos, int maxRegistros) {
         this.medicamentos = new Medicamento[maxMedicamentos];
         this.registros = new RegistroMedico[maxRegistros];
@@ -57,6 +58,6 @@ public class HistorialMedico {
             infoReg += registro.mostrarRegistro();
     }
         // Devuelvo las variables que he creado para que almacenes la información concatenadas entre ellas
-        return   infoMed + "\nRegistros Médicos:" + infoReg;
+        return   infoMed + "\n Registros Médicos: \n" + infoReg + "\n ------------- \n";
     }
 }
