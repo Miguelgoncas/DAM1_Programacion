@@ -26,4 +26,7 @@ public class Paciente {
     }
 
 
+    public String getNombre(){
+        return this.nombre;
+    }
 }

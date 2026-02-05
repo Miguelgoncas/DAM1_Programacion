@@ -49,13 +49,13 @@ public class HistorialMedico {
         String infoMed = "";
         for(Medicamento medicamento: this.medicamentos ) {
             if( medicamento != null)
-            infoMed += medicamento.mostrarInfo();
+                infoMed += medicamento.mostrarInfo();
         }
         // Creo un String vacio para almacenar el String que devuelve el metodo de registros
         String infoReg = "";
         for(RegistroMedico registro: this.registros){
             if( registro != null)
-            infoReg += registro.mostrarRegistro();
+                infoReg += registro.mostrarRegistro();
     }
         // Devuelvo las variables que he creado para que almacenes la información concatenadas entre ellas
         return   infoMed + "\n Registros Médicos: \n" + infoReg + "\n ------------- \n";
