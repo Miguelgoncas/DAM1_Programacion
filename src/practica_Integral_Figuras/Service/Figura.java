@@ -1,7 +1,7 @@
 package practica_Integral_Figuras.Service;
 
 public abstract class Figura {
-    private String color;
+    protected String color;
 
     public Figura(String color){
         this.color = color;

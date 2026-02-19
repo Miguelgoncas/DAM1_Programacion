@@ -28,6 +28,15 @@ public class PruebaArrayList {
         ArrayList<Persona> personasOf2 = new ArrayList<>(Arrays.asList(p1, p2));
 
 
+        //LinkedList
+        LinkedList <Persona> personas2 = new LinkedList<>();
+        personas2.add(p1);
+        personas2.add(p2);
+        for(Persona p : personas2) {
+            System.out.println(p);
+        }
+
+
         // HashSet es una lista que no permite repetidos
         Set<Persona> personaSet = new HashSet<>();
         personaSet.addAll(Arrays.asList(p1,p2));
@@ -38,8 +47,8 @@ public class PruebaArrayList {
         System.out.println("personaSet = " + personaSet);
 
 
-        ComparadorPersonas cp = new ComparadorPersonas();
-        personas1.sort(cp);
+
+        personas1.sort(Persona.cp);
 
         for(Persona p : personas1){
             //System.out.println(p);
@@ -47,16 +56,12 @@ public class PruebaArrayList {
 
 
 
-        LinkedList <Persona> personas2 = new LinkedList<>();
-        personas2.add(p1);
-        personas2.add(p2);
-        for(Persona p : personas2) {
-            System.out.println(p);
-        }
+
 
 
 
         Map<Integer, String> myMap = new HashMap<>();
+        // Key- Value
         myMap.put(0,"cero");
         myMap.put(1,"uno");
         myMap.put(3,"tres");

@@ -2,7 +2,7 @@ package pruebaAList;
 
 import java.util.Comparator;
 
-public class ComparadorPersonas implements Comparator<Persona> {
+public class ComparadorPersonasNombre implements Comparator<Persona> {
 
     @Override
     public int compare(Persona o1, Persona o2) {

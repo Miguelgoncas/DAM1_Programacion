@@ -37,7 +37,22 @@ public class GestorFiguras {
             f.borra();
             f.dibuja();
         }
+    }
 
+    public void mostrarSoloCirculos(){
+        for(Figura f : figuras){
+            if( f instanceof Circulo){
+                f.dibuja();
+            }
+        }
+    }
+
+    public void mostrarSoloRectangulo(){
+        for(Figura f : figuras){
+            if(f instanceof Rectangulo){
+                f.dibuja();
+            }
+        }
     }
 
     @Override

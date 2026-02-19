@@ -3,6 +3,9 @@ package gestionCurso;
 import java.util.Scanner;
 
 public class MainCurso {
+    public static void main(String[] args) {
+        menu();
+    }
     static Scanner rd = new Scanner(System.in);
     static Curso curso;
     static void menu(){
@@ -166,7 +169,5 @@ public class MainCurso {
     }
 
 
-    static void main(String[] args) {
-        menu();
-    }
+
 }

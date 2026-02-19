@@ -31,4 +31,15 @@ public class Rectangulo extends Figura2D {
     public String toString(){
         return super.toString() + "base: " + this.base + " altura " + this.altura;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this.base == ((Rectangulo)obj).base &&
+        this.altura == ((Rectangulo)obj).altura &&
+        this.color.equals(((Rectangulo)obj).color)&&
+        this.colorRelleno.equals(((Rectangulo)obj).colorRelleno)){
+            return true;
+        }
+        return false;
+    }
 }

@@ -3,6 +3,9 @@ package pruebaAList;
 import java.util.Comparator;
 
 public class Persona implements Comparable<Persona> {
+    public static final  Comparator<Persona> cp = new ComparadorPersonasNombre();
+    public static final Comparator<Persona> cm = new ComparadorPersonaEdad();
+
  //   public static final Comparator<Persona> COMPARAPORNOMBRE = new Comparator<Persona>();
 
 

@@ -1,7 +1,7 @@
 package practica_Integral_Figuras.Service;
 
 public  abstract class Figura2D extends Figura {
-    private String colorRelleno;
+    protected String colorRelleno;
 
     public Figura2D(String color, String relleno) {
         super(color);

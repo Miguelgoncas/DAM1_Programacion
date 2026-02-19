@@ -28,9 +28,22 @@ public class Circulo extends Figura2D {
         return Math.PI*Math.pow(radio,radio);
     }
 
+    // Casteamos todos los obj para trasformarlos en Circulo y poder hacer .color
+    public boolean equals(Object obj) {
+
+        if((this.color.equals(((Circulo)obj).color)) &&
+                (this.colorRelleno.equals(((Circulo)obj).colorRelleno)) &&
+                ((this.radio == ((Circulo)obj).radio))){
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return super.toString() + " Circulo" +
                 "radio=" + radio ;
+
+
     }
 }
