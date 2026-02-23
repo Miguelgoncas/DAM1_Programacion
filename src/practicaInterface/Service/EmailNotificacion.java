@@ -1,6 +1,6 @@
-package practicaInterface;
+package practicaInterface.Service;
 
-import practicaInterface.Interfacee.Contrato;
+import practicaInterface.Interface.Contrato;
 
 public class EmailNotificacion implements Contrato {
 
@@ -10,6 +10,8 @@ public class EmailNotificacion implements Contrato {
     public EmailNotificacion(String remitente){
         this.remitente = remitente;
     }
+
+
     @Override
     public boolean enviar(String destinatario, String mensaje) {
         return destinatario.contains("@");

@@ -1,4 +1,4 @@
-package RetoJuego.Method;
+package MiniRetos.RetoJuego.Method;
 
 import RetoJuego.Model.Player;
 

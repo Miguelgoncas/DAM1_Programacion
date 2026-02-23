@@ -1,6 +1,6 @@
-package practicaInterface;
+package practicaInterface.Service;
 
-import practicaInterface.Interfacee.Contrato;
+import practicaInterface.Interface.Contrato;
 
 public class PushNotificacion implements Contrato {
     private String app;

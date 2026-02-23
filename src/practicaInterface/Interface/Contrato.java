@@ -1,4 +1,4 @@
-package practicaInterface.Interfacee;
+package practicaInterface.Interface;
 
 public interface Contrato {
     boolean enviar(String destinatario, String mensaje);

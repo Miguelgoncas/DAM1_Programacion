@@ -1,8 +1,11 @@
 package practicaInterface;
 
-import practicaInterface.Interfacee.Contrato;
+import practicaInterface.Interface.Contrato;
+import practicaInterface.Service.CentroNotificaciones;
+import practicaInterface.Service.EmailNotificacion;
+import practicaInterface.Service.PushNotificacion;
+import practicaInterface.Service.SmsNotificacion;
 
-import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class MainNotificaciones {
@@ -29,7 +32,7 @@ public class MainNotificaciones {
     }
 
     static void enviarTodos(){
-
+                                    // Cambiar esto para probar los demas
        if(c1.enviarTodos("Miguel@","Hola") == -1){
            System.out.println("Error, no hay ningún canal registrado");
        } else {

@@ -1,8 +1,7 @@
-package RetoJuego;
+package MiniRetos.RetoJuego;
 
-import RetoJuego.Method.PlayerMethod;
-import RetoJuego.Model.Player;
-import RetoJuego.Service.PlayerService;
+
+import MiniRetos.RetoJuego.Service.PlayerService;
 
 public class RetoJuegoMain {
     public static void main(String[] args) {
@@ -10,7 +9,7 @@ public class RetoJuegoMain {
         // Quitar 60 vida y comprobar si esta vivo
 
         // Definimos jugador
-        Player player = new Player("Miguel" ,  100);
+        RetoJuego.Model.Player player = new RetoJuego.Model.Player("Miguel" ,  100);
 
         // Definimos servicio que maneja al jugador
         PlayerService PlayerService = new PlayerService(player);

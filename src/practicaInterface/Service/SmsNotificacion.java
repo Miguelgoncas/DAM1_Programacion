@@ -1,6 +1,6 @@
-package practicaInterface;
+package practicaInterface.Service;
 
-import practicaInterface.Interfacee.Contrato;
+import practicaInterface.Interface.Contrato;
 
 public class SmsNotificacion implements Contrato {
     private String proveedor;

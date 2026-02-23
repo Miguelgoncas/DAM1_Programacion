@@ -1,6 +1,6 @@
-package practicaInterface;
+package practicaInterface.Service;
 
-import practicaInterface.Interfacee.Contrato;
+import practicaInterface.Interface.Contrato;
 
 import java.util.ArrayList;
 
@@ -13,9 +13,12 @@ public class CentroNotificaciones {
          this.canales = new ArrayList<>();
     }
 
+
     public boolean registrarCanal(Contrato n){
         if(n == null) return false;
+
         if(this.canales == null) this.canales = new ArrayList<>();
+
         this.canales.add(n);
         return true;
     }
@@ -23,6 +26,7 @@ public class CentroNotificaciones {
     public int enviarTodos(String destinatario, String mensaje){
         int contador = 0;
         if(this.canales.isEmpty())  return -1;
+
         for(Contrato c1 : canales){
             if(c1.enviar(destinatario, mensaje)){
                 contador++;

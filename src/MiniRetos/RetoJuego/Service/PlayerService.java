@@ -1,6 +1,6 @@
-package RetoJuego.Service;
+package MiniRetos.RetoJuego.Service;
 
-import RetoJuego.Method.PlayerMethod;
+import MiniRetos.RetoJuego.Method.PlayerMethod;
 import RetoJuego.Model.Player;
 
 import java.util.Random;
