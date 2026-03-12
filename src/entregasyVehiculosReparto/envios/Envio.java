@@ -11,6 +11,12 @@ public abstract class Envio {
     double pesoKg;
     String destino;
 
+    public Envio(String codigo, double distanciaKm, double pesoKg, String destino) {
+        this.codigo = codigo;
+        this.distanciaKm = distanciaKm;
+        this.pesoKg = pesoKg;
+        this.destino = destino;
+    }
 
     public final double calcularCostePorKg(){
         if(pesoKg <= 0) return 0;
@@ -21,12 +27,6 @@ public abstract class Envio {
 
 
         return 0;
-    }
-    public Envio(String codigo, double distanciaKm, double pesoKg, String destino) {
-        this.codigo = codigo;
-        this.distanciaKm = distanciaKm;
-        this.pesoKg = pesoKg;
-        this.destino = destino;
     }
 
     public abstract double calcularCoste();
@@ -51,6 +51,10 @@ public abstract class Envio {
 
      public String toString(){
          return "Envio " + codigo + " a " + destino + " de " + pesoKg + " kg y " + distanciaKm + " km";
+     }
+
+     public double getPesoKg(){
+        return this.pesoKg;
      }
 
 

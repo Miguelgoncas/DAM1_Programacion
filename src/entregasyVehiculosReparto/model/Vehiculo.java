@@ -28,7 +28,7 @@ public abstract class Vehiculo {
     @Override
     public String toString() {
         return "Vehiculo " +
-                "matricula " + matricula + '\'' +
+                "matricula " + matricula + ' ' +
                 ", capacidadKg " + capacidadKg +
                 ", consumeBase " + consumeBase +
                 ", disponible " + disponible ;

@@ -219,7 +219,7 @@ public class MainGestionDeEntregas {
 
     static boolean comprobarCodigoEnvio(String codigo){
         for(Envio e : envio){
-            if(e.getCodigo().equals(codigo)){
+            if(e.equals(codigo)){
                 return true;
             }
         }
@@ -340,7 +340,7 @@ public class MainGestionDeEntregas {
             System.out.println("No hay vehículos registrados.");
             return;
         }
-        Vehiculo masRentable = vehiculo.get(0);
+        Vehiculo masRentable = vehiculo.getFirst();
         for (Vehiculo v : vehiculo) {
             if (v.costePorKm() < masRentable.costePorKm()) {
                 masRentable = v;
