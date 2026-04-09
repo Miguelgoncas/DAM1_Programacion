@@ -1,5 +1,7 @@
 package colecciones.priority;
 
+import ficheros.ejercicioBinarioSerializable.CompararApellido;
+
 import java.util.Iterator;
 import java.util.PriorityQueue;
 
@@ -11,7 +13,7 @@ public class MainPriority {
         CompararDNI compDNI = new CompararDNI();
         CompararNombre compNombre = new CompararNombre();
 
-        PriorityQueue<Persona> pq = new PriorityQueue<Persona>(compEdad.thenComparing(compApellido).thenComparing(compNombre).thenComparing(compDNI));
+       PriorityQueue<Persona> pq = new PriorityQueue<Persona>(compEdad.thenComparing(compNombre).thenComparing(compDNI));
 
         Persona p1 = new Persona("12345", "miguel", "gonzalez", 26);
         Persona p2 = new Persona("5678", "elena", "vela", 30);

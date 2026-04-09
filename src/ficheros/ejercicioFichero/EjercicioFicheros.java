@@ -15,7 +15,7 @@ public class EjercicioFicheros {
         File newFile = new File(ruta, "ficheroMayoresEdad.txt");
 
         // Creo ArrayList
-        ArrayList<Persona> arrPersona = new ArrayList<Persona>();
+        ArrayList<Persona> arrPersona = new ArrayList<>();
 
         // Creo un String linea para almacener la información del fichero
         String linea;

@@ -19,9 +19,7 @@ public class LecturaFichero {
 
 
         // Creamos un objeto de FileReader para leer un fichero
-
         FileReader fr = null;
-
 
         BufferedReader br = null;
 
