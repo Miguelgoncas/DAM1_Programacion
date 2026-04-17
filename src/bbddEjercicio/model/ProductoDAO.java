@@ -2,11 +2,14 @@ package bbddEjercicio.model;
 
 import bbddEjercicio.util.ConexionBaseDatos;
 
+import java.io.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 
 public class ProductoDAO {
 
@@ -29,8 +32,8 @@ public class ProductoDAO {
             ps.setInt(3,pro.getStock());
 
             // Guardamos en variable y devolvemos
-            int filas = 0;
-            return filas = ps.executeUpdate();
+
+            return ps.executeUpdate();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -116,8 +119,7 @@ public class ProductoDAO {
                 double precioProducto = rs.getDouble("precio");
                 int stockProducto = rs.getInt("stock");
 
-                Producto prod = new Producto(idProducto,nombreProducto,precioProducto,stockProducto);
-                return prod;
+                return new Producto(idProducto,nombreProducto,precioProducto,stockProducto);
             }
 
         } catch (SQLException e) {
@@ -133,9 +135,9 @@ public class ProductoDAO {
         return null;
     }
 
-    public int  actualizarProducto(int id){
+    public int  actualizarProducto(int id, String nombre, double precio, int stock){
         // Query
-        String updateProducto = "Update producto set nombre= ?, precio = ?, stock= ?" ;
+        String updateProducto = "Update producto set nombre= ?, precio = ?, stock= ? where id = ?" ;
 
         Connection con = null;
         PreparedStatement ps = null;
@@ -145,12 +147,12 @@ public class ProductoDAO {
             ps = con.prepareStatement(updateProducto);
             Producto pro = obtenerProductoID(id);
 
-            ps.setString(1, pro.getNombre());
-            ps.setDouble(2,pro.getPrecio());
-            ps.setInt(3,pro.getStock());
+            ps.setString(1, nombre);
+            ps.setDouble(2,precio);
+            ps.setInt(3,stock);
+            ps.setInt(4,id);
 
-            int filas = ps.executeUpdate();
-            return filas;
+            return ps.executeUpdate();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -166,6 +168,69 @@ public class ProductoDAO {
     }
 
     public int eliminarProducto(int id) {
+        // Creo query
+        String queryBorrar = "Delete from producto where id = ?";
+
+        Connection con = null;
+
+        PreparedStatement ps = null;
+
+        try {
+            // Realizamos conexión
+            con = ConexionBaseDatos.getConnection();
+            ps = con.prepareStatement(queryBorrar);
+
+            // Le damos el id que queramos borrar
+
+            ps.setInt(1,id);
+
+            return ps.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    // Creo metodo para meter los productos del fichero en la BBDD
+    public int cargaficheroProductos(){
+        // Creo la query
+        String insertarPro = "Insert into producto (nombre,precio,stock) VALUES (?,?,?)";
+
+
+        Connection con = null;
+
+        PreparedStatement ps = null;
+        LecturaFichero lf = new LecturaFichero();
+
+        // Creo un HashSet y le meto la información del archivo gracias al metodo creado
+        HashSet<Producto> hProducto = new HashSet<>(lf.leerArchivo());
+
+        try {
+             con = ConexionBaseDatos.getConnection();
+             ps = con.prepareStatement(insertarPro);
+
+
+            Iterator<Producto> it = hProducto.iterator();
+            while(it.hasNext()){
+                Producto p = it.next();
+                ps.setString(1,p.getNombre());
+                ps.setDouble(2,p.getPrecio());
+                ps.setInt(3,p.getStock());
+                return ps.executeUpdate();
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            try{
+                ps.close();
+                con.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
 
         return 0;
     }
@@ -173,7 +238,8 @@ public class ProductoDAO {
 
 
 
+    }
 
 
 
-}
+

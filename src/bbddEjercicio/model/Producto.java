@@ -1,6 +1,11 @@
 package bbddEjercicio.model;
 
-public class Producto {
+import java.io.Serializable;
+import java.util.Objects;
+
+public class Producto implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private int id;
     private String nombre;
     private double precio;
@@ -59,5 +64,18 @@ public class Producto {
                 ", precio: " + precio +
                 ", stock: " + stock +
                 '\n';
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Producto producto = (Producto) o;
+        return Double.compare(precio, producto.precio) == 0 && Objects.equals(nombre, producto.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, precio);
     }
 }
