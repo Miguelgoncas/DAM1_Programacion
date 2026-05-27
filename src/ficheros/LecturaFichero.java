@@ -31,6 +31,7 @@ public class LecturaFichero {
         PriorityQueue<Persona> pqPersona = new PriorityQueue<Persona>(new CompararApellido()); // Si quieres que sea inversa, .reversed()
 
 
+        arrPersona.forEach(System.out::println);
          // Lectura del fichero
         try {
             fr = new FileReader(f); // Leemos el fichero

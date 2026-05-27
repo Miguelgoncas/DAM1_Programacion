@@ -62,7 +62,7 @@ public class EjercicioFicheros {
 
         for(Persona p : arrPersona){
             if(p.getDni().equals(dni)){
-                System.out.println(p.toString());
+                System.out.println(p);
                 encontrado = true;
             }
         }

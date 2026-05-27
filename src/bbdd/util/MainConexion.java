@@ -36,7 +36,7 @@ public class MainConexion {
 
 
         if(alumDAO.obtenerTodosAlumnos() != null){
-            ArrayList<Alumno> arrAl = new ArrayList<Alumno>();
+            ArrayList<Alumno> arrAl = new ArrayList<>();
             arrAl.addAll(alumDAO.obtenerTodosAlumnos());
 
             System.out.println(arrAl.toString() );

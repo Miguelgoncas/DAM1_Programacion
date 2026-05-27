@@ -1,0 +1,4 @@
+111A;Ana;Lopez;7.5
+222B;Luis;Perez;4.2
+333C;Maria;Ruiz;8.9
+444D;Carlos;Diaz;3.1

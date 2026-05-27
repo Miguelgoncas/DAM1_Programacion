@@ -1,0 +1,4 @@
+portatil,2200,1
+monitor,300,1
+teclado,50,1
+

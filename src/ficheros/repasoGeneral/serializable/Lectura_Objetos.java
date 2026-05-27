@@ -1,32 +1,25 @@
-package ficheros.ficheroClaseSerializable;
-
-import ficheros.Persona;
+package ficheros.repasoGeneral.serializable;
 
 import java.io.*;
 import java.util.ArrayList;
 
-public class LecturaFicheroSerial {
-    static void main(String[] args) {
-        String ruta = "C:\\Users\\Usuario\\Desktop\\repos\\1Prog\\src\\ficheros\\ficheroClaseSerializable";
-        File f = new File(ruta, "ficheroClaseClaseSerializable.dat");
+public class Lectura_Objetos {
+    public static void main(String[] args) {
+
+        String ruta = "C:\\Users\\Usuario\\Desktop\\repos\\1Prog\\src\\ficheros\\repasoGeneral\\serializable\\";
+        File f = new File(ruta, "producto.dat");
+
         // Lectura binario
-        // iniciamos iniciador
         FileInputStream fis = null;
-
-
-        // iniciamos filtro
         ObjectInputStream ois = null;
-
-        ArrayList<Persona> arrPersona = new ArrayList<Persona>();
-
 
         try {
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
 
             while (fis.available() != 0 ) {
-                Persona p;
-                p = (Persona) ois.readObject();
+                Producto p;
+                p = (Producto) ois.readObject();
                 System.out.println(p.toString());
 
             }
@@ -46,5 +39,6 @@ public class LecturaFicheroSerial {
             }
 
         }
+
     }
 }

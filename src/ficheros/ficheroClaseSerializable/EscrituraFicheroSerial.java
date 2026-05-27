@@ -10,6 +10,7 @@ public class EscrituraFicheroSerial {
         String ruta = "C:\\Users\\Usuario\\Desktop\\repos\\1Prog\\src\\ficheros\\ficheroClaseSerializable";
         File f = new File(ruta, "ficheroClaseClaseSerializable.dat");
 
+        // Escritura binario
         // Declaramos clase
         FileOutputStream fout = null; // Iniciador
 

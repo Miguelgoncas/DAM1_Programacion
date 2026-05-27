@@ -1,8 +1,10 @@
 package lambda;
 
+import ficheros.Persona;
 import lambda.models.Usuario;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -44,9 +46,7 @@ public class EjemploConsumer {
         asignarNombre.accept(usuario,"Miguel");
 
 
-        Supplier<String> proveedor = () -> {
-            return "Hola mundo";
-        };
+        Supplier<String> proveedor = () -> "Hola mundo";
 
         System.out.println(proveedor.get());
 
