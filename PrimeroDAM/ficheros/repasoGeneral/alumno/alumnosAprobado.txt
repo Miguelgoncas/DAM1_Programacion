@@ -1,0 +1,4 @@
+Alumno{dni='111A', nombre='Ana', apellido='Lopez', nota=7.5}
+Alumno{dni='222B', nombre='Luis', apellido='Perez', nota=4.2}
+Alumno{dni='333C', nombre='Maria', apellido='Ruiz', nota=8.9}
+Alumno{dni='444D', nombre='Carlos', apellido='Diaz', nota=3.1}

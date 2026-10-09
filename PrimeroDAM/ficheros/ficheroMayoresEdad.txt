@@ -1,0 +1,7 @@
+12345678A,Juan,Pérez Gómez,25
+87654321B,Ana,López Martín,30
+44332211D,María,García Torres,28
+55667788E,Luis,Fernández Díaz,35
+66778899G,Pedro,Jiménez León,41
+44556677J,Lucía,Vega Molina,24
+12345A,Miguel,González Castillo,26
