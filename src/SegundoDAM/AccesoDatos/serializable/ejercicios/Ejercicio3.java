@@ -7,7 +7,7 @@ import java.util.List;
 
 
 public class Ejercicio3 {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         menu();
     }
 
